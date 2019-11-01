@@ -38,6 +38,7 @@ public class DropOff : MonoBehaviour
         {
             Debug.Log("available gold:" + availableGold);
             availableGold += 1;
+            other.gameObject.tag = "Untagged";
         }
     }
 

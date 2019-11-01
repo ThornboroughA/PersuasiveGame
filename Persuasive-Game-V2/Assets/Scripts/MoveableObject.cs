@@ -9,7 +9,8 @@ public class MoveableObject : MonoBehaviour
     GameObject tempParent;
     Transform guide;
 
-
+    public MeshRenderer objectRenderer;
+    Color originalColor;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class MoveableObject : MonoBehaviour
         guide = GameObject.FindWithTag("pickupGuide").transform;
 
         item.GetComponent<Rigidbody>().useGravity = true;
+        originalColor = objectRenderer.material.color;
     }
 
     // Update is called once per frame
@@ -49,4 +51,15 @@ public class MoveableObject : MonoBehaviour
             item.transform.localScale -= new Vector3(1, 1, 1);
         }
     }
+    //private void OnMouseOver() //highlights the object a color on mouseover.
+    //{
+    //    if (Vector3.Distance(transform.position, guide.position) < 12)
+    //    {
+    //        objectRenderer.material.color = Color.yellow;
+    //    }
+    //}
+    //private void OnMouseExit()
+    //{
+    //    objectRenderer.material.color = originalColor;
+    //}
 }

@@ -28,7 +28,6 @@ public class ResourceSource : MonoBehaviour
     {
         
         if (numberOfHits <= 0)
-
         {
             //gameObject.SetActive(false);
             Destroy(gameObject);
@@ -40,30 +39,41 @@ public class ResourceSource : MonoBehaviour
     }
     private void OnMouseDown()
     {
+
         if (Vector3.Distance(transform.position, pickupGuide.position) < 12 && numberOfHits > 0) //so the player has to be close to the object
         {
             //visual feedback
-            objectRenderer.material.color = Color.red;
+            //Material[] materials = objectRenderer.materials;
+            //for(int i = 0; i < materials.Length; i++)
+            //{
+            //    materials[i].color = Color.red;
+            //}
+           objectRenderer.material.color = Color.red;//switch out again when I figure it out
             transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
 
             isHit = true;
         }
+        //find a way to store all the old materials, then re-access them?
     }
     private void OnMouseUp()
     {
         if (isHit == true) {
-        //visual feedback
-        objectRenderer.material.color = originalColor;
+            //visual feedback
+            //Material[] materials = objectRenderer.materials;
+            //for (int i = 0; i < materials.Length; i++)
+            //{
+            //    materials[i].color = originalColor;
+            //}
+            objectRenderer.material.color = originalColor;//switch out again
+
         transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
-
-
 
         isHit = false;
         numberOfHits -= 1;
-        Debug.Log(numberOfHits);
         }
         
     }
+
 }
 
 //click the resource source several times; afterwards, it turns into several of the constituent resource
