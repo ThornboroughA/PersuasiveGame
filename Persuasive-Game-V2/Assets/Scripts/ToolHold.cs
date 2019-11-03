@@ -9,12 +9,13 @@ public class ToolHold : MonoBehaviour
     public GameObject tempParent;
     public Transform guide;
     private bool hasTool;
+    private bool isHighlight;
 
     public int toolNumber;
     private Character characterFunction;
 
-    public MeshRenderer objectRenderer;
-    Color originalColor;
+    //public MeshRenderer objectRenderer;
+    //Color originalColor;
 
     // Start is called before the first frame update
     void Start()
@@ -56,14 +57,22 @@ public class ToolHold : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (Vector3.Distance(transform.position, guide.position) < 12 && hasTool == false)
+        if ((isHighlight == false) && Vector3.Distance(transform.position, guide.position) < 12 && hasTool == false)
         {
-            objectRenderer.material.color = Color.yellow;
+            //objectRenderer.material.color = Color.yellow;
+            transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
+            isHighlight = true;
         }
     }
     private void OnMouseExit()
     {
-        objectRenderer.material.color = originalColor;
+        if((isHighlight == true) && Vector3.Distance(transform.position, guide.position) < 12 && hasTool == false)
+        {
+            //objectRenderer.material.color = originalColor;
+            transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
+            isHighlight = false;
+        }
+
     }
 
 

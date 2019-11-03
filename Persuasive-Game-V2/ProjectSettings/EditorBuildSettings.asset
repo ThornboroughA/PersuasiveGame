@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Temperate.unity
+    guid: 4168388e6ec354376831a1cc08dc10a8
+  - enabled: 1
+    path: Assets/Scenes/TechTree.unity
+    guid: 0a61e313702334b86a2a1148a394c2cc
   m_configObjects: {}

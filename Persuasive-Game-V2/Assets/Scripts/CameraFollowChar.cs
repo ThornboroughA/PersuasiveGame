@@ -8,6 +8,6 @@ public class CameraFollowChar : MonoBehaviour
     void FixedUpdate()
     {
 
-        transform.position = playerObject.transform.position + new Vector3(0, distanceFromObject, 0);
+        transform.position = playerObject.transform.position + new Vector3(0, distanceFromObject, (distanceFromObject / -2));
     }
 }

@@ -4,50 +4,72 @@ using UnityEngine;
 
 public class DropOff : MonoBehaviour
 {
-    private int availableGold;
+
+    //resources
+    public int availableGold;
+    public int availableBerries;
+    public int availableWood;
+
     private bool storageCollision;
 
     //building types
-    public GameObject testBuilding;
+    //public GameObject testBuilding;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
-    void Update()
-    {
-        //if (Vector3.Distance(transform.position, pickupGuide.position) < 12 && numberOfHits > 0)
-
-        //if (Vector3.Distance(transform.position, ))
-
-        if (availableGold > 2)
-        {
-            testBuilding.SetActive(true);
-
-        }
-
-    }
+    //void Update()
+    //{
+    //    //if (Vector3.Distance(transform.position, pickupGuide.position) < 12 && numberOfHits > 0)
+    //    //if (Vector3.Distance(transform.position, ))
+    //    if (availableGold > 2)
+    //    {
+    //        testBuilding.SetActive(true);
+    //    }
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
 
         if (other.transform.CompareTag("ResGold"))
         {
-            Debug.Log("available gold:" + availableGold);
+            //Debug.Log("available gold:" + availableGold);
             availableGold += 1;
-            other.gameObject.tag = "Untagged";
+            other.gameObject.tag = "ResGoldVoid";
+            GlobalControl.Instance.availableGold = availableGold;
+        }
+        if (other.transform.CompareTag("ResBerries"))
+        {
+            availableBerries += 1;
+            other.gameObject.tag = "ResBerriesVoid";
+            GlobalControl.Instance.availableBerries = availableBerries;
+        }
+        if (other.transform.CompareTag("ResWood"))
+        {
+            availableWood += 1;
+            other.gameObject.tag = "ResWoodVoid";
+            GlobalControl.Instance.availableWood = availableWood;
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
-        if (other.transform.CompareTag("ResGold"))
+        if (other.transform.CompareTag("ResGoldVoid"))
         {
             availableGold -= 1;
-            Debug.Log("available gold:" + availableGold);
+            other.gameObject.tag = "ResGold";
+            //Debug.Log("available gold:" + availableGold);
+            GlobalControl.Instance.availableGold = availableGold;
+        }
+        if (other.transform.CompareTag("ResBerriesVoid"))
+        {
+            availableBerries -= 1;
+            other.gameObject.tag = "ResBerries";
+            GlobalControl.Instance.availableBerries = availableBerries;
+        }
+        if (other.transform.CompareTag("ResWoodVoid"))
+        {
+            availableWood -= 1;
+            other.gameObject.tag = "ResWood";
+            GlobalControl.Instance.availableWood = availableWood;
         }
     }
 

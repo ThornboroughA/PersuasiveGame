@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4501612375020424090}
   m_Layer: 0
   m_Name: berry1
-  m_TagString: Untagged
+  m_TagString: ResBerries
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,8 +92,8 @@ Rigidbody:
   m_GameObject: {fileID: 8643496863021847504}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Drag: 2
+  m_AngularDrag: 2
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0

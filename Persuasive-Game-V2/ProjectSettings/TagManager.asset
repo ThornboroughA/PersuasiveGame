@@ -6,6 +6,11 @@ TagManager:
   tags:
   - ResGold
   - pickupGuide
+  - ResGoldVoid
+  - ResBerries
+  - ResBerriesVoid
+  - ResWood
+  - ResWoodVoid
   layers:
   - Default
   - TransparentFX

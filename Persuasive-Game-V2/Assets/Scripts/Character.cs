@@ -5,6 +5,8 @@ public class Character : MonoBehaviour
 {
     private Vector3 rotation;
 
+    public GameObject tutorialScript;
+
     //character control
     public float movementSpeed = 5.0f;
     private Vector3 moveDirection = Vector3.zero;
@@ -20,9 +22,18 @@ public class Character : MonoBehaviour
     }
     void FixedUpdate()
     {
-        //Variable Declaratoin
-        //float x;
+
         
+        //quit game
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+        //disable tutorial
+        if ((tutorialScript != null) && Input.GetKey("t"))
+        {
+            tutorialScript.SetActive(false);
+        }
 
         //Control
         if (characterController.isGrounded)
@@ -41,6 +52,8 @@ public class Character : MonoBehaviour
         //Gravity
         moveDirection.y -= 10f * Time.deltaTime;
         characterController.Move(moveDirection * Time.deltaTime);
+
+
     }
 
     public void CurrentTool(int tool)
