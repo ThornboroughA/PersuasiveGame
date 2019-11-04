@@ -47,10 +47,11 @@ public class Character : MonoBehaviour
 
         if (moveDirection != Vector3.zero)
         	transform.forward = moveDirection * Time.deltaTime;
-        
+
 
         //Gravity
-        moveDirection.y -= 10f * Time.deltaTime;
+        //moveDirection.y -= 10f * Time.deltaTime;
+        moveDirection.y -= 20f * Time.deltaTime;
         characterController.Move(moveDirection * Time.deltaTime);
 
 

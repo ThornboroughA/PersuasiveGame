@@ -6,7 +6,6 @@ public class GlobalControl : MonoBehaviour
 {
     public static GlobalControl Instance;
 
-    //public float goldMineStatus;
     public string resourcesInformation;
     public string technologyInformation;
     public int scoreIntGlobal;

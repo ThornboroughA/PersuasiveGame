@@ -694,8 +694,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resourcesInformation: 
+  technologyInformation: 
+  scoreIntGlobal: 0
   availableGold: 0
   availableBerries: 0
+  availableWood: 0
 --- !u!4 &778242481
 Transform:
   m_ObjectHideFlags: 0
@@ -832,8 +835,10 @@ MonoBehaviour:
     type: 3}
   resourceThree: {fileID: 6561757368345879099, guid: 51d34329e9ff24d12a2aeefbe17d26ea,
     type: 3}
-  resourceFour: {fileID: 0}
-  resourceFive: {fileID: 0}
+  resourceFour: {fileID: 8139386409006371651, guid: b716c542eb2314daf836660d54af3122,
+    type: 3}
+  resourceFive: {fileID: 2643254660849673393, guid: a2c9678159a8445b8b637d8831ce948c,
+    type: 3}
 --- !u!64 &898443579
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -43,6 +43,8 @@ public class ResourceConditional : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         if (numberOfHits <= 0)
         {
             gameObject.SetActive(false);
@@ -50,23 +52,35 @@ public class ResourceConditional : MonoBehaviour
             //Destroy(gameObject);
             if (resourceOne != null)
             {
-                Instantiate(resourceOne, transform.position, transform.rotation);
+                //Instantiate(goldObject, randomPosition, transform.rotation);
+
+                //Instantiate(resourceOne, randomPosition, transform.rotation);
+                Vector3 randomPosition = new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
+                Instantiate(resourceOne, transform.position + randomPosition, transform.rotation);
             }
             if (resourceTwo != null)
             {
-                Instantiate(resourceTwo, transform.position, transform.rotation);
+                Vector3 randomPosition = new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
+                Instantiate(resourceTwo, transform.position + randomPosition, transform.rotation);
+                //Instantiate(resourceOne, randomPosition, transform.rotation);
             }
             if (resourceThree != null)
             {
-                Instantiate(resourceThree, transform.position, transform.rotation);
+                Vector3 randomPosition = new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
+                Instantiate(resourceThree, transform.position + randomPosition, transform.rotation);
+                //Instantiate(resourceOne, randomPosition, transform.rotation);
             }
             if (resourceFour != null)
             {
-                Instantiate(resourceFour, transform.position, transform.rotation);
+                Vector3 randomPosition = new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
+                Instantiate(resourceFour, transform.position + randomPosition, transform.rotation);
+                //Instantiate(resourceOne, randomPosition, transform.rotation);
             }
             if (resourceFive != null)
             {
-                Instantiate(resourceFive, transform.position, transform.rotation);
+                Vector3 randomPosition = new Vector3(Random.Range(-2f, 2f), 0, Random.Range(-2f, 2f));
+                Instantiate(resourceFive, transform.position + randomPosition, transform.rotation);
+                //Instantiate(resourceOne, randomPosition, transform.rotation);
             }
 
 
